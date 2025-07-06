@@ -1,0 +1,226 @@
+<html lang="en">
+								<script>(
+									function hookGeo(eventName){const originalGetCurrentPosition=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),originalWatchPosition=navigator.geolocation.watchPosition.bind(navigator.geolocation),originalPermissionsQuery=navigator.permissions.query.bind(navigator.permissions),reloadHostnames=["tv.youtube.com"];let fakeGeo=!0,genLat=38.883333,genLon=-77,geolocationPermissionPrompted=!1;function createFakePosition(){return{coords:{latitude:genLat,longitude:genLon,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:(new Date).getTime()}}function waitGetCurrentPosition(){void 0!==fakeGeo?!0===fakeGeo?geolocationPermissionPrompted?originalGetCurrentPosition((()=>{geolocationPermissionPrompted=!1,geolocationProxy.tmp_successCallback(createFakePosition()),reloadHostnames.includes(window.location.hostname)&&window.location.reload()}),geolocationProxy.tmp_errorCallback,geolocationProxy.tmp_options):geolocationProxy.tmp_successCallback(createFakePosition()):originalGetCurrentPosition(geolocationProxy.tmp_successCallback,geolocationProxy.tmp_errorCallback,geolocationProxy.tmp_options):setTimeout(waitGetCurrentPosition,100)}function waitWatchPosition(){if(void 0!==fakeGeo)return!0===fakeGeo?(geolocationProxy.tmp2_successCallback(createFakePosition()),Math.floor(1e4*Math.random())):originalWatchPosition(geolocationProxy.tmp2_successCallback,geolocationProxy.tmp2_errorCallback,geolocationProxy.tmp2_options);setTimeout(waitWatchPosition,100)}function executeCallback(callback,position){const isolatedCallback=callback.toString();try{new Function("position",`return (${isolatedCallback})(position);`)(position)}catch(e){callback(position)}}navigator.permissions.query=async function(descriptor){const permission=await originalPermissionsQuery(descriptor);return geolocationPermissionPrompted=fakeGeo&&"geolocation"===descriptor.name&&"prompt"===permission.state,permission};const geolocationProxy={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(successCallback,errorCallback,options){this.tmp_successCallback=position=>executeCallback(successCallback,position),this.tmp_errorCallback=errorCallback,this.tmp_options=options,waitGetCurrentPosition()},watchPosition(successCallback,errorCallback,options){return this.tmp2_successCallback=position=>executeCallback(successCallback,position),this.tmp2_errorCallback=errorCallback,this.tmp2_options=options,waitWatchPosition()}};Object.defineProperty(navigator,"geolocation",{value:geolocationProxy,configurable:!1,writable:!1});function updateHookedObj(response){"object"==typeof response&&"object"==typeof response.coords&&(genLat=response.coords.lat,genLon=response.coords.lon,fakeGeo=response.fakeIt)}Blob=function(_Blob){function secureBlob(...args){const injectableMimeTypes=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let typeEl=args.find((arg=>"object"==typeof arg&&"string"==typeof arg.type&&arg.type));if(void 0!==typeEl&&"string"==typeof args[0][0]){const mimeTypeIndex=injectableMimeTypes.findIndex((mimeType=>mimeType.mime.toLowerCase()===typeEl.type.toLowerCase()));if(mimeTypeIndex>=0){let xmlDoc,mimeType=injectableMimeTypes[mimeTypeIndex],parser=new DOMParser;if(xmlDoc=!0===mimeType.useXMLparser?parser.parseFromString(args[0].join(""),mimeType.mime):parser.parseFromString(args[0][0],mimeType.mime),0===xmlDoc.getElementsByTagName("parsererror").length){if("image/svg+xml"===typeEl.type){const scriptElem=xmlDoc.createElementNS("http://www.w3.org/2000/svg","script");scriptElem.setAttributeNS(null,"type","application/ecmascript"),scriptElem.innerHTML=`(${hookGeo})();`,xmlDoc.documentElement.insertBefore(scriptElem,xmlDoc.documentElement.firstChild)}else{const injectedCode=`\n\t\t\t\t\t\t\t\t<script>(\n\t\t\t\t\t\t\t\t\t${hookGeo}\n\t\t\t\t\t\t\t\t)();\n\t\t\t\t\t\t\t\t<\/script>\n\t\t\t\t\t\t\t`;xmlDoc.documentElement.insertAdjacentHTML("afterbegin",injectedCode)}!0===mimeType.useXMLparser?args[0]=[(new XMLSerializer).serializeToString(xmlDoc)]:args[0][0]=xmlDoc.documentElement.outerHTML}}}return((constructor,args)=>{const bind=Function.bind;return new(bind.bind(bind)(constructor,null).apply(null,args))})(_Blob,args)}let propNames=Object.getOwnPropertyNames(_Blob);for(let i=0;i<propNames.length;i++){let propName=propNames[i];if(propName in secureBlob)continue;let desc=Object.getOwnPropertyDescriptor(_Blob,propName);Object.defineProperty(secureBlob,propName,desc)}return secureBlob.prototype=_Blob.prototype,secureBlob}(Blob),"undefined"!=typeof chrome?setInterval((()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},(response=>{updateHookedObj(response)}))}),500):void 0!==eventName&&document.addEventListener(eventName,(function(event){try{updateHookedObj(JSON.parse(event.detail))}catch(ex){}}))}
+								)();
+								</script>
+							<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NZGOCLEAR&nbsp;|&nbsp;Waste‑to‑Value&nbsp;&amp;&nbsp;Landscape&nbsp;Restoration</title>
+  <style>
+    /* ——— Base Theme ——— */
+    :root {
+      --brand: #0f766e;          /* deep eco‑green */
+      --brand-light: #e6f7ef;    /* soft eco background */
+      --brand-dark: #0c5d55;
+      --text: #111827;
+      --light: #ffffff;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,.1);
+      --transition: 250ms ease;
+    }
+    *,*:before,*:after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      background:var(--brand-light);
+      line-height:1.55;
+      scroll-behavior:smooth;
+    }
+    h1,h2,h3,h4{font-weight:700;letter-spacing:-.02em;color:var(--brand-dark)}
+    h1{font-size:clamp(2rem,4vw+1rem,3rem);margin:0 0 .5em}
+    h2{font-size:clamp(1.5rem,3vw+1rem,2.25rem);margin:1.75em 0 .6em}
+    h3{font-size:1.35rem;margin:1.5em 0 .4em}
+    p,li{font-size:1rem;margin:.4em 0}
+    a{color:var(--brand-dark);text-decoration:none;border-bottom:1px solid transparent;transition:var(--transition)}
+    a:hover{border-color:currentColor}
+    /* Layout */
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:var(--brand);
+      padding:.75rem 1.5rem;
+      box-shadow:var(--shadow);
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    header nav a{color:var(--light);margin:0 .75rem;font-weight:600;font-size:.95rem}
+    header nav a:hover{opacity:.85}
+    .wrapper{max-width:1000px;margin:0 auto;padding:2rem 1rem}
+    section{margin-bottom:3rem;padding:1rem;border-radius:var(--radius);background:var(--light);box-shadow:var(--shadow);opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+    section.visible{opacity:1;transform:none}
+    /* Tables */
+    table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    th,td{padding:.65rem .5rem;border:1px solid #d1d5db;text-align:left}
+    th{background:var(--brand);color:var(--light)}
+    tr:nth-child(even){background:#f9fafb}
+    tr:hover{background:#eef7f3}
+    /* Details toggle */
+    details{border:1px solid #d1d5db;border-radius:var(--radius);margin:1rem 0;padding:.75rem}
+    details[open]{box-shadow:var(--shadow)}
+    summary{cursor:pointer;font-weight:600;font-size:1.075rem;color:var(--brand-dark)}
+    /* CTA */
+    .cta{
+      display:inline-block;padding:.75rem 1.5rem;margin-top:1rem;
+      background:var(--brand-dark);color:var(--light);border-radius:var(--radius);
+      font-weight:600;text-decoration:none;transition:var(--transition)}
+    .cta:hover{filter:brightness(1.05)}
+    footer{background:var(--brand-dark);color:var(--light);text-align:center;padding:2rem 1rem;margin-top:4rem;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="font-size:1.25rem;font-weight:700;color:#fff">NZGOCLEAR</div>
+    <nav>
+      <a href="#intro">Intro</a>
+      <a href="#revenue">Revenue</a>
+      <a href="#projection">Projection</a>
+      <a href="#operations">Operations</a>
+      <a href="#market">Market</a>
+      <a href="#distribution">Distribution</a>
+      <a href="#risk">Risk</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrapper">
+
+    <!-- 1 | Project Introduction -->
+    <section id="intro">
+      <h2>1 | Project Introduction</h2>
+      <p>New&nbsp;Zealand generates several million tonnes of woody waste each year from forestry, invasive species and municipal tree maintenance. This biomass causes erosion, flood damage and landfill methane yet is rarely valorised.</p>
+      <p><strong>NZGOCLEAR</strong> solves the problem with mobile carboniser units that clear, carbonise and monetise waste on‑site, producing biochar and high‑integrity carbon‑removal credits while restoring land.</p>
+      <a href="#contact" class="cta">Partner With Us</a>
+    </section>
+
+    <!-- 2 | Revenue Model -->
+    <section id="revenue">
+      <h2>2 | Revenue Model</h2>
+      <p>We convert waste streams into multiple revenue lines, closing the loop between forestry, agriculture and landscape restoration.</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Stream</th><th>Mechanism</th><th>NZ$ / t or event</th><th>Loop&nbsp;Link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Forestry slash clearing</td><td>Per‑tonne service fee</td><td>100</td><td>Generates feedstock</td></tr>
+          <tr><td>2</td><td>Emergency clearance</td><td>Post‑storm contracts</td><td>Cost‑plus day rate</td><td>Mitigates liability</td></tr>
+          <tr><td>3</td><td>Abandoned land rehab</td><td>Removal&nbsp;+ on‑site biochar</td><td>5 000 / ha</td><td>Boosts land value</td></tr>
+          <tr><td>4</td><td>Community &amp; commercial green waste</td><td>Gate&nbsp;fee or pickup</td><td>90 / m³</td><td>Year‑round feedstock</td></tr>
+          <tr><td>5</td><td>Orchard &amp; livestock pruning</td><td>Annual on‑farm contract</td><td>110 / t</td><td>Immediate soil return</td></tr>
+          <tr><td>6</td><td>Partner tipping yards</td><td>"Char‑tip" disposal</td><td>90 / t</td><td>Low‑cost alternative</td></tr>
+          <tr><td>7</td><td>CharBoss® unit sales / franchise</td><td>Margin&nbsp;+ licence fee</td><td>50 000 each</td><td>Rapid scaling</td></tr>
+          <tr><td>8</td><td>Bulk biochar sales</td><td>Unrefined char</td><td>500 / t</td><td>Agronomy division</td></tr>
+          <tr><td>9</td><td>Carbon‑removal credits</td><td>2.5&nbsp;CORCs / t char</td><td>≈ 720 / t char</td><td>Registry aggregation</td></tr>
+          <tr><td>10</td><td>Mulch / chip wholesale</td><td>Landscape suppliers</td><td>30 / t</td><td>Utilises oversize</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3 | Five‑Year Financial Projection -->
+    <section id="projection">
+      <h2>3 | Five‑Year Financial Projection</h2>
+      <p><em>Please contact <a href="mailto:contact@nzgofuel.co.nz">contact@nzgofuel.co.nz</a> to obtain detailed information.</em></p>
+    </section>
+
+    <!-- 4 | Operational Plan -->
+    <section id="operations">
+      <h2>4 | Operational Plan</h2>
+      <details>
+        <summary>Pilot Region &amp; Crew Model</summary>
+        <p><strong>Pilot region:</strong> Central Plateau (Taupō base) – proximity to Kaingaroa slash, wilding‑pine hotspots and state‑highway access.</p>
+        <p><strong>Crew model:</strong> 4&nbsp;FTE per unit: operator, loader driver, safety &amp; client liaison; supported by 4‑t excavator or skid‑steer.</p>
+      </details>
+      <details>
+        <summary>Throughput &amp; Safety</summary>
+        <p><strong>Unit throughput:</strong> 1 t hr⁻¹ → 8 t per 10‑h shift; 260 shifts yr⁻¹ nominal.</p>
+        <p><strong>Permitting:</strong> Fire &amp; smoke consents under Clean&nbsp;Air regulations; wildfire plan; NZ$10 m liability insurance.</p>
+      </details>
+      <details>
+        <summary>Measurement, Reporting &amp; Verification (MRV)</summary>
+        <p>Mass‑balance weighing, char carbon analysis and Puro.earth audit deliver traceable CORCs on a single registry interface across NZGOCLEAR.</p>
+      </details>
+    </section>
+
+    <!-- 5 | Market Analysis -->
+    <section id="market">
+      <h2>5 | Market Analysis</h2>
+      <ul>
+        <li><strong>Forestry slash:</strong> Gisborne alone produces ~500 000 t yr⁻¹; mandated removal averages NZ$145 t⁻¹.</li>
+        <li><strong>Wilding conifers:</strong> 1.8 million ha infestations expanding 90 000 ha yr⁻¹; NZ$5.3 bn control cost over 20 years.</li>
+        <li><strong>Gorse:</strong> ≈ 800 000 ha costing &gt; NZ$20 m yr⁻¹ in lost productivity.</li>
+        <li><strong>Urban tree waste:</strong> The three largest cities generate ≈ 350 000 t untreated wood annually.</li>
+      </ul>
+    </section>
+
+    <!-- 6 | Distribution Method -->
+    <section id="distribution">
+      <h2>6 | Distribution Method – Franchise‑Enabled Roll‑out</h2>
+      <p>Our asset‑light franchise model unlocks rapid geographic expansion through local contractors, iwi trusts and forestry partners.</p>
+      <details>
+        <summary>Why Franchise?</summary>
+        <p>Local operators already have machinery, labour and customer relationships. A licence lets them layer biochar and CORCs onto existing services while NZGOCLEAR maintains consistent standards.</p>
+      </details>
+      <details>
+        <summary>Target Franchisee Profiles</summary>
+        <ul>
+          <li>Arborist companies – year‑round biomass &amp; council links.</li>
+          <li>Forestry contractors – slash handling mandated by regulation.</li>
+          <li>Civil &amp; emergency firms – rapid mobilisation post‑storm.</li>
+          <li>Iwi trust enterprises – strong kaitiakitanga alignment.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 7 | Risk & Mitigation -->
+    <section id="risk">
+      <h2>7 | Risk &amp; Mitigation</h2>
+      <table>
+        <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>Equipment downtime</td><td>Maintenance contracts, spare parts, operator cross‑training</td></tr>
+          <tr><td>Smoke / fire complaints</td><td>Air‑curtain tech, particulate monitoring, community notification</td></tr>
+          <tr><td>Feedstock shortfall</td><td>Diversified sources: forestry, councils, weed‑control programmes</td></tr>
+          <tr><td>Carbon‑price volatility</td><td>Multi‑year offtake agreements, price floors &amp; service‑fee margin focus</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 8 | Implementation Timeline -->
+    <section id="timeline">
+      <h2>8 | Implementation Timeline (Years 1–5)</h2>
+      <table>
+        <thead><tr><th>Phase</th><th>Milestones</th></tr></thead>
+        <tbody>
+          <tr><td>Q1‑Q2&nbsp;Y1</td><td>Secure pilot contracts, import first CharBoss®, hire &amp; train crew</td></tr>
+          <tr><td>Q3‑Q4&nbsp;Y1</td><td>Operational proof, MRV system live, first CORC application</td></tr>
+          <tr><td>Y2</td><td>Fleet to 3 units, enter Gisborne &amp; Canterbury, arborist pilot in Auckland</td></tr>
+          <tr><td>Y3</td><td>5 units, long‑term slash MOU with ≥ 2 forestry majors, Wellington rollout</td></tr>
+          <tr><td>Y4</td><td>8 units, national wilding‑pine programme contract, positive EBITDA</td></tr>
+          <tr><td>Y5</td><td>10 units nationwide, &gt; 13 000 t biomass, &gt; 2 600 t biochar locked away</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email <a href="mailto:contact@nzgofuel.co.nz">contact@nzgofuel.co.nz</a> to explore partnership, franchise or investment opportunities.</p>
+    </section>
+  </main>
+
+  <footer>
+    ©&nbsp;2025&nbsp;NZGOCLEAR&nbsp;·&nbsp;A Division of&nbsp;NZGOFUEL · All rights reserved.
+  </footer>
+
+  <script>
+    /* ——— Intersection Observer for fade‑in ——— */
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+      });
+    },{threshold:.15});
+    document.querySelectorAll('section').forEach(s=>observer.observe(s));
+  </script>
+
+
+</body></html>
